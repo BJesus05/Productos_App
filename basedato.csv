@@ -1,8 +1,21 @@
-IdProducto;Nombre;Descripcion;Cantidad;Precio;PrecioUnitario;Costo;PrecioVenta;UnidadesInventario;Bodega;Sucursales
-212,12,12,3123,21123,123,123,123,123,12,2
-232,1344,212,Hola,,3131,13,23,123,213,123
-22,4313,231,123,213,123,132,1231,231,31,32131
-456,vbasdr,324,Brilis,134,12,13,314,134,123,34
-451,52,434,234,234,4322,432,,324,324,432
-232,23,13,14,34,hola,453,65,34,34,12
-blablabla,31,35441,412,213,,41,23123,23,123,321
+IdProducto,Nombre,Descripcion,Cantidad,PrecioUnitario,Costo,PrecioVenta,UnidadesInventario,Bodega,Sucursales
+1,Cafe,colcafe,50,50,120,130,100,1,Medellin
+2,Leche,Alpina,10,60,50,60,40,1,Medellin
+3,Azucar,Mayaguez,30,150,120,150,10,1,Medellin
+4,Arroz,Diana,10,40,30,50,10,1,Medellin
+5,Pan,Bimbo,20,50,54,56,15,2,Bogota
+6,Pan,Mama,21,40,30,35,20,2,Bogota
+7,Huevo,Avinal,12,50,25,60,18,1,Medellin
+8,Quesito,Galan,32,56,44,62,16,1,Medellin
+9,Frijoles,Aburra,20,54,55,65,14,2,Bogota
+10,Lentejas,Esmeralda,10,30,23,54,25,1,Medellin
+11,Harina,Pan,30,50,56,56,14,2,Bogota
+12,Harina,Donarepa,24,60,56,45,10,1,Medellin
+13,Aceite,Diana,11,76,43,56,11,1,Medellin
+14,cereal,Zucarita,17,55,45,44,16,1,Medellin
+15,Servilleta,Familia,32,43,58,58,14,2,Bogota
+16,Rollo Papel,Familia,21,76,68,69,17,2,Bogota
+17,Jabon,Rey,18,54,56,60,17,2,Bogota
+18,Cepillo,Colgate,16,35,48,58,18,1,Medellin
+19,Jabon,Protex,12,65,60,54,1,1,Medellin
+20,Pasta Dental,Colgate,32,54,50,63,22,1,Medellin

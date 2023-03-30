@@ -5,20 +5,38 @@ db = 'basedato.csv'
 def intro(message):
     return int(input(message))
 
+#Funcion para leer el archivo
 def leerArchivo():
     with open(db, 'r') as archivo_csv:
-        # Crear objeto lector CSV
+        # Crear  lector CSV
         reader = csv.reader(archivo_csv)
         file = list(reader)
     return file
 
+#Funcion para grear separadores en el registro
+def mostraRegistroFormatiado(filas, index):
+    regsitroFormateado = '|'
+    separador = regsitroFormateado
+    for i, fila in enumerate(filas, start=0):
+        regsitroFormateado += filas[i].center(20) + '|'
+        separador += '--------------------' + '|'
+    if index == 0:
+        regsitroFormateado = separador + '\n' + regsitroFormateado + '\n' + separador
+    else:
+         regsitroFormateado = regsitroFormateado + '\n' + separador
+    print(regsitroFormateado)
+
+
+
+
 
 #Funcion de leer
 def mostrarRegistro():
-    # Abrir el archivo db.CSV y lee las nueva fila
+    #lee las nueva fila y la emprime
     reader = leerArchivo()
-    for row in reader:
-        print(f"{row}")
+    for index, row in enumerate(reader, start=0):
+        mostraRegistroFormatiado(row, index)
+
 
 #Funcion escribir en archivo
 def escribirArchivo(data):
@@ -30,6 +48,8 @@ def escribirArchivo(data):
             for fila in data:
                 writer.writerow(fila)
 
+
+#Funcion de eliminar
 def eliminar():
     option = 1
     while option == 1:
@@ -72,15 +92,14 @@ def actualizar():
         elif opcion == 1:
             print("Actializar datos")
             # Pedir los campos que se quieren cambiar y valor a cambiar
-            fila_a_actualizar = int(input("Ingrese el número de fila a actualizar: "))
-            columna_a_actualizar = int(input("Ingrese el número de columna a actualizar: "))
+            filaActualizar = int(input("Ingrese el número de fila a actualizar: "))
+            columnaActualizar = int(input("Ingrese el número de columna a actualizar: "))
             nuevo_valor = input("Ingrese el nuevo valor: ")
             # Abrir el archivo db.CSV y lee las nueva fila
             filas = leerArchivo()
 
-            #-----------------------------------------#
             # Actualizar el valor de la columna especificada en la fila especificada
-            filas[fila_a_actualizar][columna_a_actualizar] = nuevo_valor
+            filas[filaActualizar][columnaActualizar] = nuevo_valor
             # Abrir el archivo db.CSV y sobrescribir todas las filas
             escribirArchivo(filas)
             print("Se actualizó una fila en el archivo CSV.")
@@ -103,23 +122,23 @@ def ingresar():
         elif opcion == 1:
             print("Ingresando datos")
             # Ingresar los campos
-            id = input("Ingrese el id: ")
-            nombre = input("Ingrese el nombre: ")
-            descirpcion = input("Ingrese la despecicion: ")
-            cantidad = input("Ingrese la cantiad: ")
-            precio = input("Ingrese la precio: ")
-            precioUnitario = input("Ingrese la Precio de unitario: ")
-            costo = input("Ingrese la Costo: ")
-            precioVenta = input("Ingrese la Precio de venta: ")
-            unidadesInventario = input("Ingrese la unidades de Inventario: ")
-            bodega = input("Ingrese la bodega: ")
+            id = input("Ingrese el id: \n")
+            nombre = input("Ingrese el nombre: \n")
+            descirpcion = input("Ingrese la despecicion: \n")
+            cantidad = input("Ingrese la cantiad: \n")
+            precioUnitario = input("Ingrese la Precio de unitario: \n")
+            costo = input("Ingrese la Costo: \n")
+            precioVenta = input("Ingrese la Precio de venta: \n")
+            unidadesInventario = input("Ingrese la unidades de Inventario: \n")
+            bodega = input("Ingrese la bodega: \n")
             sucursales = input("Ingrese la sucursales: \n")
             # Agregar los datos a una lista
-            data = [id, nombre, descirpcion, cantidad, precio, precioUnitario, costo, precioVenta, unidadesInventario, bodega,
+            data = [id, nombre, descirpcion, cantidad, precioUnitario, costo, precioVenta, unidadesInventario, bodega,
                     sucursales]
 
             #Leer datos de archivo
             filas = leerArchivo()
+            #Agrega en las filas
             filas.append(data)
 
             #escribir la nueva fila
